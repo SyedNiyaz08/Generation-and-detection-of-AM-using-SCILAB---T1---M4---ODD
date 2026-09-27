@@ -10,6 +10,7 @@ To generate and detect the amplitude modulation and demodulation using SCILAB an
 
 # THEORY
 
+
 Modulation can be defined as the process by which the characteristics of carrier wave are varied in accordance with the modulating wave (signal). Modulation is performed in a transmitter by a circuit called a modulator.
 
 Need for modulation is as follows:
@@ -72,6 +73,28 @@ Visualize the demodulated signal.
 
 Compare the original modulating signal with the demodulated signal.
 
+# Scilab Code:
+~~~
+Em = 20;
+Fm = 200;
+Ec = 40;
+Fc = 2000;
+Fs = 20000;
+t = 0:1/Fs:3/Fm;
+am = Em*sin(2*%pi*Fm*t);
+subplot(3,1,1);
+plot(t,am);
+title("Message Signal");
+C = Ec*sin(2*%pi*Fc*t);
+subplot(3,1,2);
+plot(t,C);
+title("Carrier Signal");
+Eam = (Ec+am).*cos(2*%pi*Fc*t);
+subplot(3,1,3);
+plot(t,Eam);
+title("AM wave");
+~~~
+
 # PROCEDURE
 
 * Refer Algorithms and write code for the experiment.
@@ -84,23 +107,15 @@ Compare the original modulating signal with the demodulated signal.
 
 # TABULATION
 
-| Sl. No. | Signal             | Amplitude (V) Theory | Amplitude (V) Practical | Frequency (Hz) Theory | Frequency (Hz) Practical |
-| ------- | ------------------ | -------------------- | ----------------------- | --------------------- | ------------------------ |
-| 1       | Message Signal     |                      |                         |                       |                          |
-| 2       | Carrier Signal     |                      |                         |                       |                          |
-| 3       | Modulated Signal   |                      |                         |                       |                          |
-| 4       | Demodulated Signal |                      |                         |                       |                          |
+<img width="1110" height="684" alt="image" src="https://github.com/user-attachments/assets/2ac65eb4-210d-40aa-b9bb-5b162364c683" />
 
-**Modulated Signal:**
-
-* Emax =
-* Emin =
 
 # CALCULATION
 
-1. **ma (Theory) = am/ac =**
+<img width="576" height="730" alt="image" src="https://github.com/user-attachments/assets/eebd7777-e31e-45e8-bce3-81b6fa42d5a3" />
 
-2. **ma (Practical) = (Emax - Emin) / (Emax + Emin) =**
+# Result:
 
+The AM signal is generated Successfully and the given code is verified.
 
 
